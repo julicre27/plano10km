@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import TopNavbar from './components/TopNavbar';
-import ContentDisplay from './components/ContentDisplay';
-import HistoryDisplay from './components/HistoryDisplay';
-import GoalsDisplay from './components/GoalsDisplay';
-import ProgressChart from './components/ProgressChart';
-import LogWorkoutModal from './components/LogWorkoutModal';
-import { PROGRAM_CONTENT } from './constants';
+import TopNavbar from './src/components/TopNavbar';
+import ContentDisplay from './src/components/ContentDisplay';
+import HistoryDisplay from './src/components/HistoryDisplay';
+import GoalsDisplay from './src/components/GoalsDisplay';
+import ProgressChart from './src/components/ProgressChart';
+import LogWorkoutModal from './src/components/LogWorkoutModal';
+import { PROGRAM_CONTENT } from './src/constants';
 import type { WorkoutLog, Goal } from './types';
 import { GoalType } from './types';
 
