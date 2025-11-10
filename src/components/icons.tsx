@@ -7,7 +7,7 @@ import {
   History,
   Target,
   TrendingUp,
-  Run,
+  Running, // Changed from Run to Running
   Calendar,
   PlusCircle,
   Edit,
@@ -26,7 +26,7 @@ export const DumbbellIcon = Dumbbell;
 export const HistoryIcon = History;
 export const TargetIcon = Target;
 export const TrendingUpIcon = TrendingUp;
-export const RunIcon = Run;
+export const RunIcon = Running; // Exporting Running as RunIcon
 export const CalendarIcon = Calendar;
 export const PlusCircleIcon = PlusCircle;
 export const EditIcon = Edit;
