@@ -55,16 +55,22 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
           Controle de Intensidade - Esforço
         </h2>
         <div className="bg-rose-50 border-l-4 border-rose-400 p-4 mb-6">
-            <h3 className="font-semibold text-rose-800">Controle de Intensidade</h3>
+            <h3 className="font-semibold text-rose-800">Treino baseado na percepção de esforço</h3>
         </div>
-        <p className="text-gray-700 mb-4">Esforço A Escala de Percepção de Esforço é uma ferramenta simples e muito útil para corredores, especialmente para iniciantes usarem como um <strong>guia do nível de esforço que devem manter durante a corrida</strong>, sem precisar de equipamentos como frequencímetros.</p>
-        <p className="text-gray-700 mb-4">Ela vai de 0 a 10, onde você auto-avalia, com base na sua sensação, percepção... o quão intenso está o treino, ou cada parte dele. Use essa escala durante todos os seus treinos.</p>
-        <div className="bg-gray-100 p-4 rounded-lg">
-            <h4 className="font-bold text-gray-800 mb-3">Aqui está uma explicação prática de como usar:</h4>
-            <p className="mb-2"><strong>2 a 4 (Leve):</strong> A corrida é mais ritmada, mas você ainda consegue conversar tranquilamente. Esse é o ritmo ideal para aquecimentos e treinos leves.</p>
-            <p className="mb-2"><strong>5 a 7 (Moderado):</strong> Você sente o coração e a respiração acelerando, mas ainda consegue falar algumas frases curtas.</p>
-            <p><strong>8 a 10 (Forte):</strong> Aqui, você já está fazendo mais esforço, a respiração é pesada e fica difícil manter uma conversa. Esse ritmo é utilizado em treinos mais intensos.</p>
+        <p className="text-gray-700 mb-4">
+          Treino baseado na percepção de esforço significa que não existe um ritmo (pace) fixo definido. Em vez de olhar para o relógio, você precisa se guiar pelo que o corpo está sentindo no momento.
+        </p>
+        <p className="text-gray-700 mb-4">
+          Um jeito fácil de entender:
+        </p>
+        <div className="bg-gray-100 p-4 rounded-lg space-y-2">
+            <p><strong>Esforço leve (3–4 numa escala de 0 a 10):</strong> consegue conversar normalmente correndo, respiração tranquila.</p>
+            <p><strong>Esforço moderado (5–6):</strong> já sente que está correndo de verdade, respira mais forte, mas ainda consegue falar frases curtas.</p>
+            <p><strong>Esforço forte (7–8):</strong> fica difícil falar, a respiração fica bem ofegante, é aquele ritmo que você sabe que não dá pra sustentar por muito tempo.</p>
         </div>
+        <p className="text-brand-blue font-semibold mt-6 mb-4">
+          👉 É como usar o corpo como termômetro em vez de usar o pace no relógio.
+        </p>
       </div>
     ),
   },
