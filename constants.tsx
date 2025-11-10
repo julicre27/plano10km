@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ProgramSection } from './types';
-import { FlagIcon, BoltIcon, InfoIcon } from './components/icons';
+import { FlagIcon, BoltIcon, InfoIcon } from './src/components/icons';
 
 const commonTips = (
   <div className="mt-8 p-3 border-l-4 border-yellow-400 bg-yellow-50">
