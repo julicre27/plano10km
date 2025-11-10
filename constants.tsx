@@ -530,21 +530,71 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
       };
     }
 
-    // Original dynamic content for other weeks
-    switch (week) {
-      case 8:
-        duration = '50 minutos';
-        objective = 'Preparação para distâncias maiores, visando 8km.';
-        howTo = 'Corrida contínua em ritmo moderado.';
-        effort = '5 a 7 (Moderado)';
-        workoutType = 'Corrida Contínua';
-        break;
-      default: // This default case will now only be hit if week is not 1-8
-        duration = 'N/A';
-        effort = 'N/A';
-        howTo = 'N/A';
-        objective = 'N/A';
-        workoutType = 'N/A';
+    if (week === 8) {
+      return {
+        id: `semana-${week}`,
+        title: `Semana ${week}`,
+        type: 'week' as const,
+        isLoggable: true,
+        content: (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              <span className="text-brand-blue">Plano 10km</span> - Semana 8
+            </h2>
+            <p className="text-lg font-semibold text-brand-blue mb-4">Parabéns! Você chegou na última semana!! 💪🤗</p>
+
+            <div className="mb-8">
+              <h3 className="font-bold text-xl text-gray-900 mb-4">Grupo 1</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 1:</h4>
+                  <p className="text-gray-700">Faça 1km Ritmo Leve + 10 x 400 metros de corrida ritmo <strong className="font-semibold">FORTE</strong>. Intervalo entre as séries: fique parado no lugar por até 1min30seg.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 2:</h4>
+                  <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">MODERADO</strong> por 7km</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 3:</h4>
+                  <p className="text-gray-700">Faça 4 séries: 1km Ritmo Leve x 300 metros Ritmo <strong className="font-semibold">FORTE</strong> x 200 metros Ritmo <strong className="font-semibold">MODERADO</strong></p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 4:</h4>
+                  <p className="text-gray-700">Faça uma corrida por 10km. Ritmo <strong className="font-semibold">LIVRE</strong></p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="font-bold text-xl text-gray-900 mb-4">Grupo 2</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 1:</h4>
+                  <p className="text-gray-700">Faça 1km Ritmo Leve + 10 x 400 metros de corrida ritmo <strong className="font-semibold">MODERADO</strong>. Intervalo entre as séries: fique parado no lugar por até 2 minutos.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 2:</h4>
+                  <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">MODERADO</strong> por 8km</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 3:</h4>
+                  <p className="text-gray-700">Faça 5 séries: 600 metros Ritmo <strong className="font-semibold">LEVE</strong> x 200 metros Ritmo <strong className="font-semibold">FORTE</strong> x 200 metros <strong className="font-semibold">MODERADO</strong></p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 4:</h4>
+                  <p className="text-gray-700">Faça uma corrida por 10km. Ritmo <strong className="font-semibold">LIVRE</strong></p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-brand-blue font-semibold mt-6 mb-4">
+              👉 Lembre-se sempre da ESCALA DE PERCEPÇÃO DE ESFORÇO!!
+            </p>
+
+            {commonTips}
+          </div>
+        ),
+      };
     }
 
     return {
