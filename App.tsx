@@ -6,7 +6,7 @@ import HistoryDisplay from './src/components/HistoryDisplay';
 import GoalsDisplay from './src/components/GoalsDisplay';
 import ProgressChart from './src/components/ProgressChart';
 import LogWorkoutModal from './src/components/LogWorkoutModal';
-import { PROGRAM_CONTENT } from './src/constants';
+import { PROGRAM_CONTENT } from './constants'; // Corrected path
 import type { WorkoutLog, Goal } from './types';
 import { GoalType } from './types';
 
