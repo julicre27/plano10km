@@ -19,17 +19,17 @@ const commonTips = (
 
 export const PROGRAM_CONTENT: ProgramSection[] = [
   {
-    id: 'plano-5km',
-    title: 'Como Iniciar', // Changed from 'Plano 5km'
+    id: 'plano-10km',
+    title: 'Plano 10km', // Updated title
     type: 'info',
     isLoggable: false,
     content: (
       <div>
         <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-          Plano 5km
+          Plano 10km
         </h2>
         <div className="bg-rose-50 border-l-4 border-rose-400 p-4 mb-6">
-          <p className="font-semibold text-rose-800">Siga os passos abaixo para iniciar o Plano 5km:</p>
+          <p className="font-semibold text-rose-800">Siga os passos abaixo para iniciar o Plano 10km:</p>
         </div>
         <ol className="list-decimal list-inside space-y-4 text-gray-700">
           <li>Se você não tiver um relógio com GPS baixe no seu celular QUALQUER aplicativo de monitoramento, podendo ser o STRAVA ou qualquer outro que você goste!! Use para gravar seus treinos e fazer um recordatório das suas marcas para verificar sua evolução.</li>
@@ -70,91 +70,89 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
   },
   ...Array.from({ length: 10 }, (_, i) => {
     const week = i + 1;
-    let duration: string | number = 45 + (i * 2); // Exemplo de progressão
-    let effort = week < 4 ? '2 a 4 (Leve)' : week < 8 ? '3 a 5 (Leve a Moderado)' : '4 a 6 (Moderado)';
-    let howTo = `Caminhada em ritmo contínuo e vigoroso por ${duration} minutos. Não precisa correr! Sem pausas`;
-    let objective = week < 3 ? 'Adaptação' : 'Consistência';
-    let workoutType = 'Caminhada Contínua';
+    let duration: string | number;
+    let effort: string;
+    let howTo: string;
+    let objective: string;
+    let workoutType: string;
 
-    // Override content for Week 2
-    if (week === 2) {
-      duration = 45;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 4 minutos de caminhada com 1 minuto de corrida/trote leve';
-      effort = '5 a 7 (Moderado)';
-      workoutType = 'Corrida com Caminhada';
-    }
-    
-    // Override content for Week 3
-    if (week === 3) {
-      duration = 45;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 4 minutos de caminhada com 1 minuto de corrida MODERADA (tente correr um pouco mais rápido que a semana anterior)';
-      effort = '5 a 7 (Moderado)';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 4
-    if (week === 4) {
-      duration = 44;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 3 minutos de caminhada com 1 minuto de corrida MODERADA';
-      effort = '5 a 7 (Moderado)';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 5
-    if (week === 5) {
-      duration = 45;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 3 minutos de caminhada com 2 minutos de corrida LEVE (fácil, trote)';
-      effort = '5 a 7 (Moderado) [esforço total do treino]';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 6
-    if (week === 6) {
-      duration = 45;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 2 minutos de caminhada com 3 minutos de corrida LEVE (fácil, trote)';
-      effort = '5 a 7 (Moderado) [esforço total do treino]';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 7
-    if (week === 7) {
-      duration = 45;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 2 minutos de caminhada com 1 minuto de corrida FORTE (mais rápido) com 1 minuto de corrida LEVE (trote).';
-      effort = '5 a 7 (Moderado) [esforço total do treino]';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 8
-    if (week === 8) {
-      duration = 45;
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne 1 minuto de caminhada com 1 minuto de corrida FORTE (mais rápido) com 2 minutos de corrida LEVE (trote).';
-      effort = '5 a 7 (Moderado) [esforço total do treino]';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 9
-    if (week === 9) {
-      duration = '4km';
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne corrida com caminhada até completar 4km, mas não controle o tempo no relógio como as semanas anteriores, faça de acordo com o seu fôlego e disposição física. Tente mais correr do que caminhar, a velocidade da corrida não importa ok?! O que importa é manter o movimento da corrida pelo maior tempo possível. Quando cansar as pernas ou faltar fôlego, caminhe para recuperar e volte a correr na sequência.';
-      effort = '5 a 7 (Moderado) [esforço total do treino]';
-      workoutType = 'Corrida com Caminhada';
-    }
-
-    // Override content for Week 10
-    if (week === 10) {
-      duration = '5km';
-      objective = 'Trabalhar resistência e ritmo.';
-      howTo = 'Alterne corrida com caminhada até completar 5km, mas não controle o tempo no relógio como as semanas anteriores, faça de acordo com o seu fôlego e disposição física. Tente mais correr do que caminhar, a velocidade da corrida não importa ok?! O que importa é manter o movimento da corrida pelo maior tempo possível. Quando cansar as pernas ou faltar fôlego, caminhe para recuperar e volte a correr na sequência.';
-      effort = '5 a 7 (Moderado) [esforço total do treino]';
-      workoutType = 'Corrida com Caminhada';
+    switch (week) {
+      case 1:
+        duration = '45 minutos';
+        objective = 'Adaptação e construção de base aeróbica.';
+        howTo = 'Caminhada em ritmo contínuo e vigoroso. Sem pausas.';
+        effort = '2 a 4 (Leve)';
+        workoutType = 'Caminhada Contínua';
+        break;
+      case 2:
+        duration = '45 minutos';
+        objective = 'Desenvolver resistência e introduzir a corrida.';
+        howTo = 'Alterne 4 minutos de caminhada com 1 minuto de corrida/trote leve.';
+        effort = '3 a 5 (Leve a Moderado)';
+        workoutType = 'Corrida com Caminhada';
+        break;
+      case 3:
+        duration = '50 minutos';
+        objective = 'Aumentar o tempo de corrida e a capacidade aeróbica.';
+        howTo = 'Alterne 3 minutos de caminhada com 2 minutos de corrida leve.';
+        effort = '4 a 6 (Moderado)';
+        workoutType = 'Corrida com Caminhada';
+        break;
+      case 4:
+        duration = '50 minutos';
+        objective = 'Melhorar o ritmo e a consistência na corrida.';
+        howTo = 'Alterne 2 minutos de caminhada com 3 minutos de corrida moderada.';
+        effort = '5 a 7 (Moderado)';
+        workoutType = 'Corrida com Caminhada';
+        break;
+      case 5:
+        duration = '45 minutos';
+        objective = 'Correr por períodos mais longos e fortalecer a resistência.';
+        howTo = 'Faça 20 minutos de corrida contínua (leve), 5 minutos de caminhada, e mais 20 minutos de corrida contínua (leve).';
+        effort = '5 a 7 (Moderado)';
+        workoutType = 'Corrida Contínua Intervalada';
+        break;
+      case 6:
+        duration = '30 minutos';
+        objective = 'Atingir 5km de corrida contínua.';
+        howTo = 'Corrida contínua em ritmo moderado. Tente completar 5km.';
+        effort = '5 a 7 (Moderado)';
+        workoutType = 'Corrida Contínua';
+        break;
+      case 7:
+        duration = '40 minutos';
+        objective = 'Aumentar a distância e a resistência em corrida contínua.';
+        howTo = 'Corrida contínua em ritmo moderado.';
+        effort = '5 a 7 (Moderado)';
+        workoutType = 'Corrida Contínua';
+        break;
+      case 8:
+        duration = '50 minutos';
+        objective = 'Preparação para distâncias maiores, visando 8km.';
+        howTo = 'Corrida contínua em ritmo moderado.';
+        effort = '5 a 7 (Moderado)';
+        workoutType = 'Corrida Contínua';
+        break;
+      case 9:
+        duration = '60 minutos';
+        objective = 'Construir a resistência necessária para 10km.';
+        howTo = 'Corrida contínua em ritmo moderado.';
+        effort = '5 a 7 (Moderado)';
+        workoutType = 'Corrida Contínua';
+        break;
+      case 10:
+        duration = '10km';
+        objective = 'Concluir a distância de 10km.';
+        howTo = 'Corrida contínua em ritmo moderado, focando em completar os 10km.';
+        effort = '6 a 8 (Moderado a Forte)';
+        workoutType = 'Corrida Contínua';
+        break;
+      default:
+        duration = 'N/A';
+        effort = 'N/A';
+        howTo = 'N/A';
+        objective = 'N/A';
+        workoutType = 'N/A';
     }
 
     return {
@@ -165,10 +163,10 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
       content: (
         <div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            <span className="text-brand-blue">Plano 5km</span> - Semana {week}
+            <span className="text-brand-blue">Plano 10km</span> - Semana {week}
           </h2>
           {week === 10 && (
-            <p className="text-lg font-semibold text-brand-green mb-4">Parabéns! Você chegou na última semana!! 💪🤗</p>
+            <p className="text-lg font-semibold text-brand-blue mb-4">Parabéns! Você chegou na última semana!! 💪🤗</p>
           )}
           <p className="text-lg text-gray-600 mb-6">Faça esse treino 3x nessa semana!</p>
 
