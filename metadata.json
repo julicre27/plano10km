@@ -1,0 +1,5 @@
+{
+  "name": "Plano de Corrida Interativo",
+  "description": "Um aplicativo interativo para acompanhar um programa de corrida de 5km para iniciantes, permitindo o registro de treinos e o acompanhamento do progresso.",
+  "requestFramePermissions": []
+}
