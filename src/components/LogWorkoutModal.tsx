@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import type { WorkoutLog } from '../types';
-import { EffortLevel } from '../types';
-import { XIcon } from './icons'; // Assuming XIcon exists or will be created
+import type { WorkoutLog } from '../../types';
+import { EffortLevel } from '../../types';
+import { XIcon } from './icons';
 
 interface LogWorkoutModalProps {
   isOpen: boolean;
