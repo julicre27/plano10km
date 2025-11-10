@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { Goal, WorkoutLog } from '../types';
-import { GoalType } from '../types';
+import type { Goal, WorkoutLog } from '../../types';
+import { GoalType } from '../../types';
 import { TargetIcon, PlusCircleIcon, TrashIcon } from './icons';
 
 interface GoalsDisplayProps {
