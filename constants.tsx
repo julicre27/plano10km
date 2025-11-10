@@ -68,7 +68,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
       </div>
     ),
   },
-  ...Array.from({ length: 10 }, (_, i) => {
+  ...Array.from({ length: 8 }, (_, i) => { // Alterado de 10 para 8 semanas
     const week = i + 1;
     let duration: string | number;
     let effort: string;
@@ -168,21 +168,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
         effort = '5 a 7 (Moderado)';
         workoutType = 'Corrida Contínua';
         break;
-      case 9:
-        duration = '60 minutos';
-        objective = 'Construir a resistência necessária para 10km.';
-        howTo = 'Corrida contínua em ritmo moderado.';
-        effort = '5 a 7 (Moderado)';
-        workoutType = 'Corrida Contínua';
-        break;
-      case 10:
-        duration = '10km';
-        objective = 'Concluir a distância de 10km.';
-        howTo = 'Corrida contínua em ritmo moderado, focando em completar os 10km.';
-        effort = '6 a 8 (Moderado a Forte)';
-        workoutType = 'Corrida Contínua';
-        break;
-      default:
+      default: // This default case will now only be hit if week is not 1-8
         duration = 'N/A';
         effort = 'N/A';
         howTo = 'N/A';
@@ -200,7 +186,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             <span className="text-brand-blue">Plano 10km</span> - Semana {week}
           </h2>
-          {week === 10 && (
+          {week === 8 && ( // Ajustado para a última semana ser a 8
             <p className="text-lg font-semibold text-brand-blue mb-4">Parabéns! Você chegou na última semana!! 💪🤗</p>
           )}
           <p className="text-lg text-gray-600 mb-6">Faça esse treino 3x nessa semana!</p>
