@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import TopNavbar from './components/TopNavbar';
 import ContentDisplay from './components/ContentDisplay';
 import HistoryDisplay from './components/HistoryDisplay';
@@ -8,8 +9,6 @@ import LogWorkoutModal from './components/LogWorkoutModal';
 import { PROGRAM_CONTENT } from './constants';
 import type { WorkoutLog, Goal } from './types';
 import { GoalType } from './types';
-
-type View = 'plan' | 'history' | 'goals' | 'progress';
 
 const App: React.FC = () => {
   const [activeSectionId, setActiveSectionId] = useState<string>(() => {
@@ -29,7 +28,6 @@ const App: React.FC = () => {
   const [isLogModalOpen, setLogModalOpen] = useState(false);
   const [logToEdit, setLogToEdit] = useState<WorkoutLog | null>(null);
   const [logIndexToEdit, setLogIndexToEdit] = useState<number | null>(null);
-  const [currentView, setCurrentView] = useState<View>('plan');
 
   useEffect(() => {
     localStorage.setItem('activeSectionId', activeSectionId);
@@ -45,7 +43,6 @@ const App: React.FC = () => {
 
   const handleSelectSection = (id: string) => {
     setActiveSectionId(id);
-    setCurrentView('plan');
   };
   
   const handleSaveLog = (log: WorkoutLog, logIndex?: number) => {
@@ -80,49 +77,43 @@ const App: React.FC = () => {
   
   const activeSection = PROGRAM_CONTENT.find(s => s.id === activeSectionId);
 
-  const renderContent = () => {
-    switch(currentView) {
-      case 'plan':
-        return (
-          <ContentDisplay
-            section={activeSection}
-            workoutLogs={workoutLogs[activeSectionId] || []}
-            onOpenLogModal={handleOpenLogModal}
-          />
-        );
-      case 'history':
-        return <HistoryDisplay workoutLogs={workoutLogs} programSections={PROGRAM_CONTENT} />;
-      case 'goals':
-        return <GoalsDisplay goals={goals} workoutLogs={workoutLogs} onAddGoal={handleAddGoal} onDeleteGoal={handleDeleteGoal} />;
-      case 'progress':
-        return <ProgressChart workoutLogs={workoutLogs} />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 font-sans">
-      <TopNavbar
-        programContent={PROGRAM_CONTENT}
-        activeSectionId={activeSectionId}
-        onSelectSection={handleSelectSection}
-        workoutLogs={workoutLogs}
-        currentView={currentView}
-        setCurrentView={setCurrentView}
-      />
-      <main className="flex-1 overflow-y-auto">
-        {renderContent()}
-      </main>
-      {activeSection && <LogWorkoutModal
-        isOpen={isLogModalOpen}
-        onClose={() => { setLogModalOpen(false); setLogToEdit(null); setLogIndexToEdit(null); }}
-        onSave={handleSaveLog}
-        weekTitle={activeSection.title}
-        existingLog={logToEdit}
-        logIndexToUpdate={logIndexToEdit}
-      />}
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen bg-gray-100 font-sans">
+        <TopNavbar
+          programContent={PROGRAM_CONTENT}
+          activeSectionId={activeSectionId}
+          onSelectSection={handleSelectSection}
+          workoutLogs={workoutLogs}
+        />
+        <main className="flex-1 overflow-y-auto">
+          <Routes>
+            <Route path="/" element={<Navigate to={`/plan/${activeSectionId}`} replace />} />
+            <Route 
+              path="/plan/:sectionId" 
+              element={
+                <ContentDisplay
+                  section={activeSection}
+                  workoutLogs={workoutLogs[activeSectionId] || []}
+                  onOpenLogModal={handleOpenLogModal}
+                />
+              } 
+            />
+            <Route path="/history" element={<HistoryDisplay workoutLogs={workoutLogs} programSections={PROGRAM_CONTENT} />} />
+            <Route path="/goals" element={<GoalsDisplay goals={goals} workoutLogs={workoutLogs} onAddGoal={handleAddGoal} onDeleteGoal={handleDeleteGoal} />} />
+            <Route path="/progress" element={<ProgressChart workoutLogs={workoutLogs} />} />
+          </Routes>
+        </main>
+        {activeSection && <LogWorkoutModal
+          isOpen={isLogModalOpen}
+          onClose={() => { setLogModalOpen(false); setLogToEdit(null); setLogIndexToEdit(null); }}
+          onSave={handleSaveLog}
+          weekTitle={activeSection.title}
+          existingLog={logToEdit}
+          logIndexToUpdate={logIndexToEdit}
+        />}
+      </div>
+    </Router>
   );
 };
 
