@@ -68,7 +68,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
       </div>
     ),
   },
-  ...Array.from({ length: 8 }, (_, i) => { // Alterado de 10 para 8 semanas
+  ...Array.from({ length: 8 }, (_, i) => {
     const week = i + 1;
     let duration: string | number;
     let effort: string;
@@ -76,7 +76,6 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
     let objective: string;
     let workoutType: string;
 
-    // Specific content for Week 1
     if (week === 1) {
       return {
         id: `semana-${week}`,
@@ -117,15 +116,77 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
       };
     }
 
+    if (week === 2) {
+      return {
+        id: `semana-${week}`,
+        title: `Semana ${week}`,
+        type: 'week' as const,
+        isLoggable: true,
+        content: (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              <span className="text-brand-blue">Plano 10km</span> - Semana 2
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Aqui estão os treinos para esta semana:
+            </p>
+
+            <div className="mb-8">
+              <h3 className="font-bold text-xl text-gray-900 mb-4">Grupo 1</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 1:</h4>
+                  <p className="text-gray-700">Faça por 40 minutos alternando ritmos: 4' Ritmo Leve x 1' Ritmo Forte</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 2:</h4>
+                  <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">LEVE</strong> por 40 minutos.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 3:</h4>
+                  <p className="text-gray-700">Faça por 40 minutos alternando ritmos: 4' Ritmo Leve x 1' Ritmo Forte</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 4:</h4>
+                  <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">LEVE</strong> por 50 minutos.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="font-bold text-xl text-gray-900 mb-4">Grupo 2</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 1:</h4>
+                  <p className="text-gray-700">Faça por 30 minutos alternando ritmos: 4' Ritmo Leve x 1' Ritmo Moderado</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 2:</h4>
+                  <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">LEVE</strong> por 30 minutos.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 3:</h4>
+                  <p className="text-gray-700">Faça por 30 minutos alternando ritmos: 4' Ritmo Leve x 1' Ritmo Moderado</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h4 className="font-bold text-lg text-gray-800 mb-2">Treino 4:</h4>
+                  <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">LEVE</strong> por 40 minutos.</p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-brand-blue font-semibold mt-6 mb-4">
+              👉 Lembre-se sempre da ESCALA DE PERCEPÇÃO DE ESFORÇO!!
+            </p>
+
+            {commonTips}
+          </div>
+        ),
+      };
+    }
+
     // Original dynamic content for other weeks
     switch (week) {
-      case 2:
-        duration = '45 minutos';
-        objective = 'Desenvolver resistência e introduzir a corrida.';
-        howTo = 'Alterne 4 minutos de caminhada com 1 minuto de corrida/trote leve.';
-        effort = '3 a 5 (Leve a Moderado)';
-        workoutType = 'Corrida com Caminhada';
-        break;
       case 3:
         duration = '50 minutos';
         objective = 'Aumentar o tempo de corrida e a capacidade aeróbica.';
