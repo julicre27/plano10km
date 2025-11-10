@@ -76,14 +76,49 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
     let objective: string;
     let workoutType: string;
 
+    // Specific content for Week 1
+    if (week === 1) {
+      return {
+        id: `semana-${week}`,
+        title: `Semana ${week}`,
+        type: 'week' as const,
+        isLoggable: true,
+        content: (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              <span className="text-brand-blue">Plano 10km</span> - Semana 1
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Aqui estão os treinos para esta semana:
+            </p>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-4">
+              <h3 className="font-bold text-xl text-gray-900 mb-2">Treino 1:</h3>
+              <p className="text-gray-700">Realizar o teste de 3km.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-4">
+              <h3 className="font-bold text-xl text-gray-900 mb-2">Treino 2:</h3>
+              <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">LEVE</strong> por 35 minutos.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-4">
+              <h3 className="font-bold text-xl text-gray-900 mb-2">Treino 3:</h3>
+              <p className="text-gray-700">Faça uma corrida contínua em ritmo <strong className="font-semibold">LEVE</strong> entre 35 e 45 minutos.</p>
+            </div>
+
+            <p className="text-brand-blue font-semibold mt-6 mb-4">
+              👉 Lembre-se sempre da ESCALA DE PERCEPÇÃO DE ESFORÇO!!
+            </p>
+
+            {commonTips}
+          </div>
+        ),
+      };
+    }
+
+    // Original dynamic content for other weeks
     switch (week) {
-      case 1:
-        duration = '45 minutos';
-        objective = 'Adaptação e construção de base aeróbica.';
-        howTo = 'Caminhada em ritmo contínuo e vigoroso. Sem pausas.';
-        effort = '2 a 4 (Leve)';
-        workoutType = 'Caminhada Contínua';
-        break;
       case 2:
         duration = '45 minutos';
         objective = 'Desenvolver resistência e introduzir a corrida.';
