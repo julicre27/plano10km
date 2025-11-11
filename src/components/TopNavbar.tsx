@@ -72,7 +72,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
                     }
                     role="menuitem"
                   >
-                    <DumbbellIcon className="inline-block w-4 h-4 mr-2" /> {plano10kmSection.title}
+                    <RunIcon className="inline-block w-4 h-4 mr-2" /> {plano10kmSection.title}
                   </NavLink>
                 )}
                 {controleIntensidadeSection && (
@@ -104,7 +104,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
                     }
                     role="menuitem"
                   >
-                    <DumbbellIcon className="inline-block w-4 h-4 mr-2" /> {section.title}
+                    <RunIcon className="inline-block w-4 h-4 mr-2" /> {section.title}
                   </NavLink>
                 ))}
                 <div className="border-t border-gray-100 my-1"></div>
