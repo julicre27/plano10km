@@ -25,23 +25,6 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
     isLoggable: false,
     content: (
       <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-          Plano 10km
-        </h2>
-        <div className="bg-rose-50 border-l-4 border-rose-400 p-4 mb-6">
-          <p className="font-semibold text-rose-800">Siga os passos abaixo para iniciar o Plano 10km:</p>
-        </div>
-        <ol className="list-decimal list-inside space-y-4 text-gray-700 mb-8">
-          <li>Se você não tiver um relógio com GPS baixe no seu celular QUALQUER aplicativo de monitoramento, podendo ser o STRAVA ou qualquer outro que você goste!! Use para gravar seus treinos e fazer um recordatório das suas marcas para verificar sua evolução.</li>
-          <li>Este programa é composto por 10 semanas de treinos, onde cada semana serão 3 treinos de corrida. Para complementar sua rotina de treino de forma saudável, procure também fazer 2 treinos de fortalecimento entre os dias de corrida.</li>
-          <li>Não avance para a próxima semana sem completar a anterior</li>
-          <li>Não corra dias seguidos</li>
-          <li>Siga exatamente as orientações de cada treino a ser realizado, leia antes de sair pra treinar.</li>
-          <li>Antes de sair para correr, (e também para os treinos de força) faça os exercícios de aquecimento [consulte o módulo treinos complementares]</li>
-          <li>Após o término dos treinos, faça os exercícios de alongamento (após a corrida e após os fortalecimentos) [consulte o módulo treinos complementares]</li>
-          <li>Após o terminar as 10 semanas deste programa avance para a trilha de nível 2 ou faça os treinos propostos para 'Corrida x Emagrecimento'</li>
-        </ol>
-
         <div className="mb-8">
           <h3 className="text-xl font-bold text-gray-800 mb-4">Assista ao vídeo para entender o teste de 3km:</h3>
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
