@@ -6,14 +6,13 @@ import HistoryDisplay from './src/components/HistoryDisplay';
 import GoalsDisplay from './src/components/GoalsDisplay';
 import ProgressChart from './src/components/ProgressChart';
 import LogWorkoutModal from './src/components/LogWorkoutModal';
-import { PROGRAM_CONTENT } from './constants'; // Corrected path
+import { PROGRAM_CONTENT } from './constants';
 import type { WorkoutLog, Goal } from './types';
 import { GoalType } from './types';
 
 const App: React.FC = () => {
-  const [activeSectionId, setActiveSectionId] = useState<string>(() => {
-    return localStorage.getItem('activeSectionId') || PROGRAM_CONTENT[0].id;
-  });
+  // Inicializa activeSectionId sempre com 'plano-10km'
+  const [activeSectionId, setActiveSectionId] = useState<string>('plano-10km');
   const [workoutLogs, setWorkoutLogs] = useState<Record<string, WorkoutLog[]>>(() => {
     const saved = localStorage.getItem('workoutLogs');
     return saved ? JSON.parse(saved) : {};
@@ -29,9 +28,10 @@ const App: React.FC = () => {
   const [logToEdit, setLogToEdit] = useState<WorkoutLog | null>(null);
   const [logIndexToEdit, setLogIndexToEdit] = useState<number | null>(null);
 
-  useEffect(() => {
-    localStorage.setItem('activeSectionId', activeSectionId);
-  }, [activeSectionId]);
+  // Remove o useEffect que salvava activeSectionId no localStorage
+  // useEffect(() => {
+  //   localStorage.setItem('activeSectionId', activeSectionId);
+  // }, [activeSectionId]);
 
   useEffect(() => {
     localStorage.setItem('workoutLogs', JSON.stringify(workoutLogs));
@@ -87,7 +87,8 @@ const App: React.FC = () => {
         />
         <main className="flex-1 overflow-y-auto">
           <Routes>
-            <Route path="/" element={<Navigate to={`/plan/${activeSectionId}`} replace />} />
+            {/* Redireciona para 'plano-10km' se a rota for a raiz */}
+            <Route path="/" element={<Navigate to="/plan/plano-10km" replace />} />
             <Route 
               path="/plan/:sectionId" 
               element={
