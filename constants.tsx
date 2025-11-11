@@ -94,7 +94,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
           👉 É como usar o corpo como termômetro em vez de usar o pace no relógio.
         </p>
         <div className="mt-8 text-center">
-          <img src="/images/pse-corrida.png" alt="Escala de Percepção de Esforço" className="max-w-full h-auto mx-auto rounded-lg shadow-md" />
+          <img src="https://serativo.com.br/wp-content/uploads/2025/11/PSE-CORRIDA.png" alt="Escala de Percepção de Esforço" className="max-w-full h-auto mx-auto rounded-lg shadow-md" />
         </div>
       </div>
     ),
