@@ -84,7 +84,6 @@ const App: React.FC = () => {
           programContent={PROGRAM_CONTENT}
           activeSectionId={activeSectionId}
           onSelectSection={handleSelectSection}
-          workoutLogs={workoutLogs}
         />
         <main className="flex-1 overflow-y-auto">
           <Routes>
