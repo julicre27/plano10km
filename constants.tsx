@@ -31,7 +31,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
         <div className="bg-rose-50 border-l-4 border-rose-400 p-4 mb-6">
           <p className="font-semibold text-rose-800">Siga os passos abaixo para iniciar o Plano 10km:</p>
         </div>
-        <ol className="list-decimal list-inside space-y-4 text-gray-700">
+        <ol className="list-decimal list-inside space-y-4 text-gray-700 mb-8">
           <li>Se você não tiver um relógio com GPS baixe no seu celular QUALQUER aplicativo de monitoramento, podendo ser o STRAVA ou qualquer outro que você goste!! Use para gravar seus treinos e fazer um recordatório das suas marcas para verificar sua evolução.</li>
           <li>Este programa é composto por 10 semanas de treinos, onde cada semana serão 3 treinos de corrida. Para complementar sua rotina de treino de forma saudável, procure também fazer 2 treinos de fortalecimento entre os dias de corrida.</li>
           <li>Não avance para a próxima semana sem completar a anterior</li>
@@ -41,6 +41,42 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
           <li>Após o término dos treinos, faça os exercícios de alongamento (após a corrida e após os fortalecimentos) [consulte o módulo treinos complementares]</li>
           <li>Após o terminar as 10 semanas deste programa avance para a trilha de nível 2 ou faça os treinos propostos para 'Corrida x Emagrecimento'</li>
         </ol>
+
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-gray-800 mb-4">Assista ao vídeo para entender o teste de 3km:</h3>
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
+              src="https://www.youtube.com/embed/rKDCUFP1fzU"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+          <h3 className="font-bold text-blue-800 mb-2">✨ Resultado do teste de 3km: ✨</h3>
+          <ul className="list-disc list-inside text-blue-700 space-y-1">
+            <li>Grupo 1: abaixo de 19 minutos</li>
+            <li>Grupo 2: acima de 19 minutos</li>
+          </ul>
+        </div>
+
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-gray-800 mb-4">Como fazer o teste de 3km:</h3>
+          <p className="text-gray-700 mb-4">Esse teste precisa ser no seu máximo, combinado?</p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong className="font-semibold text-red-600">⚠️ O que você deve fazer:</strong> Correr 3km o mais rápido que conseguir, no menor tempo.</li>
+            <li><strong className="font-semibold text-red-600">🚨 Antes de sair correndo é importante aquecer.</strong></li>
+            <li><strong className="font-semibold text-brand-blue">➡️ O que importa nesse teste é fazer 3km no menor tempo possível. Sem pausas.</strong></li>
+            <li><strong className="font-semibold text-brand-blue">➡️ Não pode fazer na esteira, nem na areia.</strong></li>
+            <li><strong className="font-semibold text-brand-blue">➡️ Dê preferência faça no asfalto/concreto/pista de atletismo.</strong></li>
+            <li><strong className="font-semibold text-brand-blue">➡️ Procure um percurso plano e sem muitas curvas, ok?!</strong></li>
+            <li><strong className="font-semibold text-brand-blue">➡️ Não fique parando o cronômetro, faça direto, sem pausas ou interrupções.</strong></li>
+          </ul>
+        </div>
       </div>
     ),
   },
