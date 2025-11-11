@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import type { ProgramSection } from '../types';
-import { HistoryIcon, TargetIcon, TrendingUpIcon, BoltIcon, FootprintsIcon, FlagIcon } from './icons'; // Adicionado FlagIcon
+import { HistoryIcon, TargetIcon, TrendingUpIcon, BoltIcon, FootprintsIcon, FlagIcon } from './icons';
 
 interface TopNavbarProps {
   programContent: ProgramSection[];
@@ -42,7 +42,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
 
   return (
     <nav className="bg-white shadow-md p-4 sticky top-0 z-50">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-x-8"> {/* Alterado para justify-center e adicionado gap-x-8 */}
         {/* Main Title / Logo */}
         <div className="flex items-center mb-4 md:mb-0">
           <NavLink to="/plan/plano-10km" className="text-2xl font-bold text-gray-800 hover:text-brand-blue transition-colors">
