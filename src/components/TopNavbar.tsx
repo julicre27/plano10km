@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import type { ProgramSection } from '../types';
-import { HistoryIcon, TargetIcon, TrendingUpIcon, RunIcon, BoltIcon, FootprintsIcon } from './icons'; // Importando FootprintsIcon
+import { HistoryIcon, TargetIcon, TrendingUpIcon, RunIcon, BoltIcon, FootprintsIcon } from './icons';
 
 interface TopNavbarProps {
   programContent: ProgramSection[];
@@ -40,7 +40,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Main Title / Logo */}
         <div className="flex items-center mb-4 md:mb-0">
-          <RunIcon className="w-8 h-8 text-brand-blue mr-2" />
+          {/* <RunIcon className="w-8 h-8 text-brand-blue mr-2" /> <-- Ícone removido aqui */}
           <NavLink to="/plan/plano-10km" className="text-2xl font-bold text-gray-800 hover:text-brand-blue transition-colors">
             Plano 10km
           </NavLink>
