@@ -26,7 +26,7 @@ export const PROGRAM_CONTENT: ProgramSection[] = [
     content: (
       <div>
         <div className="mb-8">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Assista ao vídeo para entender o teste de 3km:</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-4">PLANO 10KM - ASSISTA O VÍDEO</h3>
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
