@@ -12,6 +12,7 @@ import {
   Edit,
   Trash2,
   X,
+  Footprints, // Adicionado Footprints
 } from 'lucide-react';
 
 // Custom SVG for RunIcon
@@ -44,3 +45,4 @@ export const PlusCircleIcon = PlusCircle;
 export const EditIcon = Edit;
 export const TrashIcon = Trash2;
 export const XIcon = X;
+export const FootprintsIcon = Footprints; // Exportando Footprints

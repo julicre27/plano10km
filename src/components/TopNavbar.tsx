@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import type { ProgramSection } from '../types';
-import { DumbbellIcon, HistoryIcon, TargetIcon, TrendingUpIcon, RunIcon, BoltIcon } from './icons';
+import { HistoryIcon, TargetIcon, TrendingUpIcon, RunIcon, BoltIcon, FootprintsIcon } from './icons'; // Importando FootprintsIcon
 
 interface TopNavbarProps {
   programContent: ProgramSection[];
@@ -72,7 +72,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
                     }
                     role="menuitem"
                   >
-                    <RunIcon className="inline-block w-4 h-4 mr-2" /> {plano10kmSection.title}
+                    <FootprintsIcon className="inline-block w-4 h-4 mr-2" /> {plano10kmSection.title}
                   </NavLink>
                 )}
                 {controleIntensidadeSection && (
@@ -104,7 +104,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
                     }
                     role="menuitem"
                   >
-                    <RunIcon className="inline-block w-4 h-4 mr-2" /> {section.title}
+                    <FootprintsIcon className="inline-block w-4 h-4 mr-2" /> {section.title}
                   </NavLink>
                 ))}
                 <div className="border-t border-gray-100 my-1"></div>
